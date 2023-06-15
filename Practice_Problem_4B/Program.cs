@@ -4,40 +4,23 @@
     {
         public static void Main(string[] args)
         {
-            int[] arr = { 1, 2, 1, 3, 5, 8, 7, 2, 9, 5, 3 };
-            int n = arr.Length;
-            int[] fr1 = new int[n] ;
-            for(int m=0;m<n; m++)
+            int[] arr = { 15,9,65,80,45,6,54 };
+            int temp = 0;
+            for(int i=0;i<arr.Length; i++)
             {
-                fr1[m] = -1;
-            }
-            
-            int ctr=0,i=0,j=0;
-            for (i = 0; i < n; i++)
-            {
-                ctr = 1;
-                for (j = i + 1; j < n; j++)
+                for(int j=i;j<arr.Length;j++)
                 {
-                    if (arr[i] == arr[j])
+                    if (arr[i] > arr[j])
                     {
-                        ctr++;
-                        fr1[j] = 0;
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
                     }
                 }
-
-                if (fr1[i] != 0)
-                {
-                    fr1[i] = ctr;
-                }
+               
             }
-            Console.Write("\nThe frequency of all elements of the array : \n");
-            for (i = 0; i < n; i++)
-            {
-                if (fr1[i] != 0)
-                {
-                    Console.Write("{0} occurs {1} times\n", arr[i], fr1[i]);
-                }
-            }
+            Console.WriteLine("Maximum element is " + arr[arr.Length-1]);
+            Console.WriteLine("Minimum element is " + arr[0]);
 
         }
     }
