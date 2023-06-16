@@ -5,17 +5,33 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter the Number");
-            int number = Convert.ToInt32(Console.ReadLine());
-            int sum = 0, rem = 0;
-            while(number != 0)
+            int[,] matrixA = new int[3,3];
+            for(int i = 0;i<3;i++)
             {
-                rem= number%10;
-                sum = sum+rem;
-                number = number/10;
+                for(int j = 0;j<3;j++)
+                {
+                    matrixA[i,j] = Convert.ToInt32(Console.ReadLine());
+                }
             }
-            Console.WriteLine("Sum of Digits of given number  is {0} ",sum);
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(matrixA[i,j] +"\t"); 
+                }
+                Console.Write("\n");
+            }
+            Console.WriteLine("sum of each row ====>");
             
-            
+            for (int i = 0; i < 3; i++)
+            {
+                int sum = 0;
+                for (int j = 0; j < 3; j++)
+                {
+                   sum += matrixA[i, j];
+                }
+                Console.WriteLine("Sum of Row {0} is {1} ",i,sum);
+            }
         }
 
        
