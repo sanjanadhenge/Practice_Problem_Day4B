@@ -4,22 +4,30 @@
     {
         public static void Main(string[] args)
         {
-            for(int i= 0; i < 7;i++)
+            Console.WriteLine("Enter the string");
+            string str = Console.ReadLine();
+            string [] words = str.Split(' ');
+            for(int i=0; i<words.Length; i++)
             {
-               for(int j= 0; j < 7;j++)
-                {
-                    if(i==0 || i==6 || j==0 || j==6)
-                    {
-                        Console.Write("*");
-                    }
-                    else
-                    {
-                        Console.Write(' ');
-                    }
-                }
-               
-                Console.Write("\n");    
+                Reverse(words[i]);
             }
+            
+        }
+
+       
+
+        public static void Reverse(string str)
+        {
+            char[] chars = str.ToCharArray();
+            string reverse = String.Empty;
+            for (int i = str.Length-1; i >=0; i--)
+            {
+              reverse += chars[i];
+            }
+            Console.Write(reverse+" ");
         }
     }
 }
+
+
+
