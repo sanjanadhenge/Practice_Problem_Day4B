@@ -4,28 +4,23 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the string");
-            string str = Console.ReadLine();
-            string [] words = str.Split(' ');
-            for(int i=0; i<words.Length; i++)
+            Console.WriteLine("Enter the Number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int sum = 0, rem = 0;
+            while(number != 0)
             {
-                Reverse(words[i]);
+                rem= number%10;
+                sum = sum+rem;
+                number = number/10;
             }
+            Console.WriteLine("Sum of Digits of given number  is {0} ",sum);
+            
             
         }
 
        
 
-        public static void Reverse(string str)
-        {
-            char[] chars = str.ToCharArray();
-            string reverse = String.Empty;
-            for (int i = str.Length-1; i >=0; i--)
-            {
-              reverse += chars[i];
-            }
-            Console.Write(reverse+" ");
-        }
+       
     }
 }
 
