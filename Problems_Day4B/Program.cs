@@ -4,12 +4,20 @@
     {
         public static void Main(string[] args)
         {
-            for(int i= 0; i < 8;i++)
+            for(int i= 0; i < 7;i++)
             {
-                for(int j=8;j>i;j--)
+               for(int j= 0; j < 7;j++)
                 {
-                    Console.Write("*");
+                    if(i==0 || i==6 || j==0 || j==6)
+                    {
+                        Console.Write("*");
+                    }
+                    else
+                    {
+                        Console.Write(' ');
+                    }
                 }
+               
                 Console.Write("\n");    
             }
         }
